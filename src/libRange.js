@@ -1,8 +1,5 @@
 /*
- * $Revision$
- * $Date$
- *
- * Copyright (C) 1999-2013 Jive Software. All rights reserved.
+ * Copyright (C) 1999-2014 Jive Software. All rights reserved.
  *
  * This software is the proprietary information of Jive Software. Use is subject to license terms.
  */
@@ -12,7 +9,19 @@
  * Significant portions (including TridentSelection, TridentRange)
  * Copyright 2009, Moxiecode Systems AB and used under the terms of the LGPL
  */
-define("libRange", ['jquery'], function($){
+(function( factory ) {
+    if ( typeof define === "function" && define.amd ) {
+
+        // AMD. Register as an anonymous module.
+        define([
+            'jquery'
+        ], factory );
+    } else {
+
+        // Browser globals
+        factory( jQuery );
+    }
+}(function( $ ) {
 
     function nodeIndex(n){
         var i = 0;
